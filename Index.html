@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>વાસ્તુ પૂજન નિમંત્રણ - જીનેશ અને પ્રીતિ સોની</title>
+    <meta name="description" content="જીનેશ અને પ્રીતિ સોની તરફથી વાસ્તુ પૂજનનું હાર્દિક આમંત્રણ.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@300;400;500;600;700;800&family=Great+Vibes&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron-muted: #D27D2D;
+            --saffron-light: #E8A87C;
+            --gold-antique: #C5A059;
+            --gold-light: #F4D078;
+            --cream-bg: #FAF8F3;
+            --text-dark: #4A4A4A;
+            --text-light: #7A7A7A;
+            --maroon-deep: #8B1E3F;
+        }
+
+        body {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            background-color: var(--cream-bg);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A059' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .main-card {
+            background: linear-gradient(135deg, #FFFBF2 0%, #FFFFFF 50%, #FFFBF2 100%);
+            box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.25);
+            border: 1px solid var(--gold-antique);
+        }
+
+        .text-gold-foil {
+            background: linear-gradient(to bottom, var(--gold-antique) 0%, #B8860B 50%, #A08040 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--gold-antique);
+            filter: drop-shadow(0px 1px 0px rgba(0,0,0,0.1));
+        }
+
+        .text-saffron { color: var(--saffron-muted); }
+        .text-dark { color: var(--text-dark); }
+        .text-light { color: var(--text-light); }
+        .text-maroon { color: var(--maroon-deep); }
+
+        .border-refined {
+            border: 1.5px solid var(--gold-antique);
+            border-radius: 24px;
+            /* Removed backdrop-filter to fix PDF generation issues */
+            background-color: rgba(255, 255, 255, 0.85); 
+        }
+
+        .sway { animation: sway 3s ease-in-out infinite alternate; }
+        @keyframes sway { 0% { transform: rotate(-1deg); } 100% { transform: rotate(1deg); } }
+
+        .fade-up {
+            animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--saffron-muted), #B86828);
+            border: 1px solid var(--gold-antique);
+            box-shadow: 0 4px 6px rgba(210, 125, 45, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:active { transform: scale(0.98); }
+        .btn-primary:hover { box-shadow: 0 6px 12px rgba(210, 125, 45, 0.25); }
+        
+        .btn-secondary {
+            background: white;
+            border: 1px solid var(--saffron-muted);
+            color: var(--saffron-muted);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #fff8f0;
+            border-color: #B86828;
+            color: #B86828;
+        }
+
+        .ornamental-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: 1.2rem auto;
+            opacity: 0.7;
+        }
+        .ornamental-divider::before, .ornamental-divider::after {
+            content: '';
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-antique), transparent);
+            flex: 1;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-6 px-4">
+
+    <div id="invite-card" class="main-card relative w-full max-w-[400px] rounded-[30px] overflow-hidden p-1.5">
+        
+        <div class="border-refined w-full h-full relative px-5 py-6 flex flex-col items-center text-center rounded-[24px]">
+
+            <!-- TORAN -->
+            <div class="absolute top-0 left-0 right-0 z-20 flex justify-center -mt-3">
+                <svg width="350" height="55" viewBox="0 0 350 60" fill="none" class="drop-shadow-sm sway">
+                    <path d="M0,0 Q175,30 350,0" fill="none" stroke="#6B8E23" stroke-width="1.5"/>
+                    <g>
+                        <circle cx="30" cy="8" r="6" fill="var(--saffron-muted)"/>
+                        <circle cx="30" cy="8" r="4" fill="var(--saffron-light)"/>
+                        <circle cx="70" cy="18" r="8" fill="var(--saffron-muted)"/>
+                        <circle cx="70" cy="18" r="5" fill="var(--saffron-light)"/>
+                        <circle cx="110" cy="24" r="6" fill="var(--saffron-muted)"/>
+                        <circle cx="175" cy="28" r="10" fill="#C05018"/> 
+                        <circle cx="175" cy="28" r="6" fill="var(--saffron-light)"/>
+                        <circle cx="240" cy="24" r="6" fill="var(--saffron-muted)"/>
+                        <circle cx="280" cy="18" r="8" fill="var(--saffron-muted)"/>
+                        <circle cx="280" cy="18" r="5" fill="var(--saffron-light)"/>
+                        <circle cx="320" cy="8" r="6" fill="var(--saffron-muted)"/>
+                    </g>
+                    <path d="M175,28 Q165,50 175,60 Q185,50 175,28" fill="#6B8E23"/>
+                    <path d="M70,18 Q60,40 70,50 Q80,40 70,18" fill="#6B8E23"/>
+                    <path d="M280,18 Q270,40 280,50 Q290,40 280,18" fill="#6B8E23"/>
+                </svg>
+            </div>
+
+            <!-- Mandala Background -->
+            <div class="absolute top-40 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+                 <svg class="w-96 h-96 text-saffron" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0L55 15L70 5L75 20L90 15L85 30L100 35L85 45L95 60L75 65L80 80L65 75L60 90L50 75L40 90L35 75L20 80L25 65L5 60L15 45L0 35L15 30L10 15L25 20L30 5L45 15L50 0Z" />
+                 </svg>
+            </div>
+
+            <!-- CONTENT -->
+            
+            <!-- Top Mantras -->
+            <div class="mt-6 mb-4 fade-up z-10 w-full">
+                <div class="flex justify-center items-center w-full text-saffron text-[10px] font-bold tracking-tight whitespace-nowrap overflow-visible gap-4">
+                    <span>|| જય બુટ ભવાની માં ||</span>
+                    <span class="opacity-50 text-[8px]">•</span>
+                    <span>|| જય સ્વામિનારાયણ ||</span>
+                </div>
+                
+                <!-- Ganesha Icon -->
+                <div class="w-14 h-14 mx-auto mt-4 drop-shadow-sm relative text-saffron opacity-90">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.68 375.01" class="w-full h-full fill-current">
+                        <g transform="translate(-72.384 -3.3092)">
+                            <g transform="matrix(.24970 0 0 .24970 186.32 67.369)">
+                                <path d="m-254.29-64.781c87.76 5.794 177.72-27.495 258.71 59.247-45.771 1.8678-76.86-35.413-138.71 9.3247 20.42 177.47 47.678 126.49 114.29 220-199.17-12.6-135.24-255.77-234.29-288.57z" />
+                                <path d="m630.13-59.066c-87.759 14.03-177.71-16.743-267.28 39.247 49.092 9.7746 98.183-8.9371 147.28 29.325-35.93 178.96-48.53 139.34-114.28 220 199.17-12.6 135.24-255.78 234.28-288.58z" />
+                                <path d="m17.143-81.924c3.3708-3.3676 277.56-37.714 331.43 60-109.52-34.337-219.05-27.157-328.57-8.571-8.782-16.431-10.496-33.505-2.857-51.429z" />
+                                <path d="m41.737-154.36c8.6614 0.77895 218.44 3.2334 281.74 72.264-109.53-34.334-169.36-39.424-278.89-20.834-20.251-17.143-9.9549-34.286-2.8571-51.429z" />
+                                <path d="m168.86-256.55c39.903 30.576 60.816 63.219 61.68 99.725h-117.14c4.319-38.701 8.815-62.507 55.463-99.725z" />
+                                <path d="m29.473 26.657 101.96 95.454h-85.714l8.9607-58.225z" />
+                                <path d="m150.79-25.874h16.608c2.9493 21.218 5.8986 41.35 8.848 43.418 4.6261 3.2436 9.2522-22.865 13.878-43.418h13.985v57.625c-11.111 11.722-20.392 26.496-53.319 1.8589z" />
+                                <path d="m108.39 244.35c-16.271 88.385-25.843 179.09 42.575 249.91 72.832 29.791 145.66 17.294 218.5-11.987 62.797-31.579 125.23-50.86 178.9-32.268 2.8587 10.828 7.2511 21.655-3.0878 32.483-76.22-9.6283-125.18 23.289-184.49 47.48-84.343 40.763-168.69 42.139-253.03 0.99212-61.528-47.64-81.751-133.94-56.767-219.55-22.734 4.6686-68.133 16.341-96.279 10.388 23-33.919 99.936-100.26 153.67-77.438z" />
+                                <path d="m322.71 244.15c10.691 18.756 15.391 37.513 8.9992 56.269l-21.932 19.425c4.5169 37.936 27.89 49.916 59.87 62.495l208.83-0.61773 22.259 13.626c22.781 1.5712 45.793 3.6053 66.743 1.5141 12.193 9.128 9.502 18.256 6.846 27.384-9.0566 12.434-19.902 14.133-30.822 15.385 0.0541 14.41-8.5598 24.485-23.716 31.29-7.5861 4.3378-13.348 1.3795-19.074-1.7226-2.956-14.795-5.9153-29.59-7.0151-44.384l-220.45 1.8701c-56.015-17.413-101.83-43.61-136-84.051-46.018-71.666 32.661-126.45 85.458-98.482z" />
+                                <path d="m-155.13 292.81c52.052-1.3064 63.322 17.571 76.502 42.433 11.404 21.511 6.7917 35.136-3.8505 56.414 14.351-9.9091 39.326-6.7507 48.715 6.1248 15.069 27.173 11.413 70.302-8.5641 105.45-26.2 30.778-60.378 35.842-78.6 31.581 4.4578-18.384 51.338-48.058 32.915-88.706-14.366 19.556-29.345 26.82-43.097 26.45-9.1871-3.5063-10.318-10.465-8.095-18.861 13.756-16.785 26.73-45.324 20.379-68.178-5.3048-19.088-24.394-43.089-43.963-39.998-19.219 3.036-25.376 31.555-28.965 50.678-6.0977 32.491 2.2491 65.392 14.645 98.088 8.7352 23.967 57.229 41.622 44.748 64.676-7.2443 13.381-33.006 4.7026-45.631-1.2274-77.339-47.928-122.54-255.53 22.863-264.93z" />
+                                <path d="m412.42 264.35c9.0012-7.407 18.002-3.739 27.004 0-1.4019 75.519-10.106 81.011-68.736 95.74 13.911-22.941 27.822-53.19 41.733-95.74z" />
+                                <path d="m672.3 571.93c-17.53 9.7734-26.096 5.2038-34.31 0.0723-15.78-18.991-18.491-40.267-52.921-43.273-33.563-0.89058-48.589 13.28-59.816 30.538l74.117 2.2202c2.4741 9.2124 11.467 12.721-0.0375 34.164l-132.9 0.10745c-6.2426-41.204 42.466-81.505 104.01-119.41 40.652 16.48 93.85 64.296 101.86 95.585z" />
+                                <path d="m-412.24 608.92c63.69-62.727 159.48-71.742 252.45-33.281 73.196 25.749 101.81 47.666 133.36 86.201l-157.86-47.9c-57.56-18.105-138.7 18.628-173.92 53.668-31.091 39.296-17.2 130.36 78.587 218.98 46.838 29.138 99.118 39.156 212.81 54.368l212.16 4.4858c72.432 9.0774 82.488 42.412 97.039 73.999-22.456-15.602-33.874-37.09-91.283-34.051l-222.06 11.15c-81.09-4.62-162.17-7.22-243.26-51.92-182.8-98.47-157.72-268-98.03-335.71z" />
+                                <path d="m216.72 596.51c12.579-3.4091 24.5-4.5051 41.425-14.535 9.2542 21.905 11.237 37.33 0.92259 51.9-68.98 67.01-157.57 115.58-239.84 129.45 55.172-47.19 128.96-81.02 197.49-166.82z" />
+                                <path d="m163.9 776.87c0 16.05-14.312 29.06-31.966 29.06-17.655 0-31.966-13.011-31.966-29.06 0-16.05 14.312-29.06 31.966-29.06 17.655 0 31.966 13.011 31.966 29.06z" transform="translate(11.624 -19.761)" />
+                                <path d="m16.274 788.49c88.966 38.04 147.9 31.04 252.25-12.78-81.91 92.22-261.68 97.39-252.25 12.78z" />
+                                <path d="m362.67 759.43c54.812-77.496 110.07-133.48 188.66-147.69 111.82-20.227 210.95 60.725 204.23 161.64-7.5364 113.2-62.378 211.61-137.17 295.25-35.776 40.012-101.85 53.129-137.85 63.483 27.515-31.272 63.483-31.171 101.99-89.923 39.04-80.32 107.18-182.44 102.88-249.11-9.64-100.18-69.81-126.08-124.31-109.86-62.726 18.671-116.5 74.312-148.96 117.51-46.269 77.574-76.585 232.6-60.721 265.47 28.879 32.547 70.191 23.687 99.599 25.671-29.521 26.551-111.58 47.297-137.56 9.3859-58.327-85.105-0.71171-256.24 49.216-341.84z" />
+                                <path d="m-55.796 1010.5c193.47 37.661 208.1 107.99 234.81 181.34-71.898-50.474-112.58-119.68-239.46-137.16-35.63-15.499-19.134-44.091 4.6497-44.172z" />
+                                <path d="m237.13 1115.1 34.119-43.18c34.002 13.845 31 24.357 20.818 43.112l-17.74 16.341 1.2792 65.733 150.19-3.8417c32.746 18.771 23.676 35.723-0.35327 52.025l-202.26-4.6496c-24.691-46.038-3.2668-85.489 13.949-125.54z" />
+                                <path d="m310.64 26.657-101.96 95.454h85.714l-8.9607-58.225z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Invocation -->
+            <div class="fade-up delay-100 z-10 w-full px-2">
+                <p class="text-light text-sm font-medium leading-relaxed tracking-wide mb-2 px-2">
+                    સહર્ષ જણાવવાનું કે અમારા કુળદેવી શ્રી બુટભવાની માતાજીની અસીમ કૃપાથી તેમજ માતા-પિતાના આશીર્વાદથી
+                </p>
+                <p class="text-saffron font-semibold text-base">
+                    અમારા નૂતન નિવાસના
+                </p>
+            </div>
+
+            <!-- Main Title -->
+            <div class="fade-up delay-200 my-5 z-10 w-full">
+                <h1 class="text-5xl font-extrabold text-gold-foil tracking-tight py-2 leading-tight">
+                    વાસ્તુ પૂજન
+                </h1>
+                <div class="text-saffron text-lg font-bold mt-1 tracking-wider">(ગૃહ પ્રવેશ)</div>
+            </div>
+
+            <!-- Divider -->
+            <div class="ornamental-divider fade-up delay-300">
+                <span class="text-gold-antique text-xl">❖</span>
+            </div>
+
+            <!-- Host Names -->
+            <div class="fade-up delay-300 z-10">
+                <p class="text-xs text-light uppercase tracking-widest mb-3 font-semibold">નિમંત્રક</p>
+                <div class="space-y-3">
+                    <h2 class="text-base font-bold text-dark leading-snug">
+                        મુકેશ સોની અને કાશ્મીરા સોની
+                    </h2>
+                    <h2 class="text-xl font-bold text-maroon leading-snug">
+                        જીનેશ સોની અને પ્રીતિ સોની
+                    </h2>
+                    <h2 class="text-sm font-bold text-saffron leading-snug">
+                        અક્ષત સોની અને આરમ્યા સોની
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Date Box -->
+            <div class="fade-up delay-400 mt-6 mb-6 w-full px-4 z-10">
+                <div class="relative border border-gold-antique bg-white/95 rounded-2xl p-5 shadow-sm overflow-hidden">
+                    
+                    <div class="text-center mb-5">
+                        <span class="text-saffron font-bold text-[10px] tracking-wide uppercase border-b border-gold-antique pb-1">શુભ મુહૂર્ત</span>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center mb-5">
+                        <div class="text-6xl font-serif font-bold text-maroon leading-none drop-shadow-sm">૦૫</div>
+                        <div class="text-xl font-bold text-gold-antique uppercase mt-1">ડિસેમ્બર ૨૦૨૫</div>
+                        <div class="text-sm font-medium text-gray-500 tracking-wide mt-1">શુક્રવાર</div>
+                    </div>
+
+                    <div class="space-y-3 w-full border-t border-gold-antique/20 pt-4">
+                        <div class="flex items-center justify-between px-2 bg-cream-bg/30 rounded-lg p-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-saffron-light/10 flex items-center justify-center border border-saffron-muted/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-saffron-muted" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <span class="text-dark font-bold text-sm">વાસ્તુ પૂજન</span>
+                            </div>
+                            <span class="text-maroon font-bold text-sm bg-white px-2 py-1 rounded border border-gold-antique/20 shadow-sm">૧૦:૦૦ કલાકે</span>
+                        </div>
+
+                        <div class="flex items-center justify-between px-2 bg-cream-bg/30 rounded-lg p-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-saffron-light/10 flex items-center justify-center border border-saffron-muted/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-saffron-muted" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.319l-1.738-5.42-1.233-.616a1 1 0 01.894-1.79l1.599.8L8 5.323V4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                        <path d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+                                        <path d="M5 12a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zM15 12a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" />
+                                    </svg>
+                                </div>
+                                <span class="text-dark font-bold text-sm">શ્રીફળ હોમવાનું</span>
+                            </div>
+                            <span class="text-maroon font-bold text-sm bg-white px-2 py-1 rounded border border-gold-antique/20 shadow-sm">૧૨:૦૦ કલાકે</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="fade-up delay-500 mb-8 z-10">
+                <div class="inline-block border-b border-gold-antique mb-2 pb-1 opacity-80">
+                    <h3 class="font-bold text-saffron text-xs uppercase tracking-widest">શુભ સ્થળ</h3>
+                </div>
+                <p class="text-dark text-base font-medium leading-relaxed mt-1">
+                    બી ૧૦૦૨, એકાર્થ વન,<br>
+                    કુડાસણ પોર રોડ,<br>
+                    કુડાસણ, ગાંધીનગર.
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div id="action-buttons" class="w-full space-y-3 mt-auto fade-up delay-500 z-20 px-2">
+                <a href="https://www.google.com/maps/search/?api=1&query=Ekarth+One+Kudasan+Gandhinagar" target="_blank" class="btn-primary w-full py-3.5 rounded-xl text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 tracking-wide">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    વાસ્તુ લોકેશન જુઓ
+                </a>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Radhe+Thal+Sargasan+Gandhinagar" target="_blank" class="btn-primary w-full py-3.5 rounded-xl text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 tracking-wide">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    ભોજન સ્થળ (રાધે થાળ)
+                </a>
+                
+                <button onclick="shareInvite()" class="btn-secondary w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-50 transition-colors tracking-wide">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                    આમંત્રણ શેર કરો
+                </button>
+
+                <button id="pdf-btn" onclick="downloadPDF()" class="btn-secondary w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-50 transition-colors tracking-wide mt-2 border-dashed border-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span id="pdf-text">PDF ડાઉનલોડ કરો</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function shareInvite() {
+            const shareData = {
+                title: 'વાસ્તુ પૂજન નિમંત્રણ',
+                text: 'જીનેશ અને પ્રીતિ સોની તરફથી વાસ્તુ પૂજનનું હાર્દિક આમંત્રણ.\nતારીખ: ૦૫ ડિસેમ્બર ૨૦૨૫\nવાસ્તુ પૂજન: સવારે ૧૦:૦૦ કલાકે\nશ્રીફળ હોમવાનું: બપોરે ૧૨:૦૦ કલાકે\nસ્થળ: બી ૧૦૦૨, એકાર્થ વન, ગાંધીનગર.\n\nભોજન સ્થળ: રાધે થાળ, સરગાસણ, ગાંધીનગર.',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((err) => console.log('Error sharing:', err));
+            } else {
+                const text = `વાસ્તુ પૂજન નિમંત્રણ\n\nજીનેશ અને પ્રીતિ સોની તરફથી વાસ્તુ પૂજનનું હાર્દિક આમંત્રણ.\n\n📅 તારીખ: ૦૫ ડિસેમ્બર ૨૦૨૫\n🕙 વાસ્તુ પૂજન: સવારે ૧૦:૦૦ કલાકે\n🥥 શ્રીફળ હોમવાનું: બપોરે ૧૨:૦૦ કલાકે\n📍 સ્થળ: બી ૧૦૦૨, એકાર્થ વન, કુડાસણ પોર રોડ, કુડાસણ, ગાંધીનગર.\n🍽️ ભોજન સ્થળ: રાધે થાળ, સરગાસણ, ગાંધીનગર.\n\nવિગતવાર આમંત્રણ માટે લિંક જુઓ: ${window.location.href}`;
+                
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('આમંત્રણ કોપી કર્યું!');
+                } catch (err) {
+                    alert('કોપી કરવામાં ભૂલ થઈ.');
+                }
+                document.body.removeChild(textarea);
+            }
+        }
+
+        async function downloadPDF() {
+            const btn = document.getElementById('pdf-btn');
+            const btnText = document.getElementById('pdf-text');
+            const buttonsContainer = document.getElementById('action-buttons');
+            const element = document.getElementById('invite-card');
+
+            // Visual feedback
+            const originalText = btnText.innerText;
+            btnText.innerText = "બનાવી રહ્યું છે...";
+            btn.style.opacity = "0.7";
+
+            try {
+                // Temporarily hide buttons for clean PDF
+                buttonsContainer.style.display = 'none';
+
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    backgroundColor: '#FAF8F3',
+                    logging: false,
+                    useCORS: true
+                });
+
+                // Restore buttons
+                buttonsContainer.style.display = 'block';
+
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                const { jsPDF } = window.jspdf;
+                
+                // A4 size: 210mm x 297mm
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                
+                const imgProps = pdf.getImageProperties(imgData);
+                const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                // Center vertically
+                const yPos = (pdfHeight - imgHeight) / 2;
+
+                pdf.addImage(imgData, 'JPEG', 0, yPos, pdfWidth, imgHeight);
+                pdf.save('Vastu_Puja_Invitation.pdf');
+
+            } catch (error) {
+                console.error("PDF Error:", error);
+                alert('PDF ડાઉનલોડ કરવામાં ભૂલ થઈ. કૃપા કરીને સ્ક્રીનશોટ લો.');
+                // Restore buttons in case of error
+                buttonsContainer.style.display = 'block';
+            } finally {
+                btnText.innerText = originalText;
+                btn.style.opacity = "1";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
